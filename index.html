@@ -1,547 +1,1106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InfisGroup — Websites, Full‑Stack, Marketing, Recruitment & Online Training</title>
-  <meta name="description" content="InfisGroup builds blazing‑fast static websites, full‑stack apps, digital marketing campaigns, recruitment solutions, cloud/DevOps, and live online training in modern tech stacks." />
-  <link rel="canonical" href="https://infisgroup.com/" />
-  <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#8A1538" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      InfisGroup — Websites, Full‑Stack, Marketing, Recruitment & Online
+      Training
+    </title>
+    <meta
+      name="description"
+      content="InfisGroup builds blazing‑fast static websites, full‑stack apps, digital marketing campaigns, recruitment solutions, cloud/DevOps, and live online training in modern tech stacks."
+    />
+    <link rel="canonical" href="https://infisgroup.com/" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#8A1538" />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="InfisGroup" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://infisgroup.com/" />
-  <meta property="og:title" content="InfisGroup — Build • Market • Hire • Train" />
-  <meta property="og:description" content="Websites, full‑stack development, digital marketing, recruitment, cloud/DevOps & live online training." />
-  <meta property="og:image" content="https://infisgroup.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="InfisGroup — Build • Market • Hire • Train" />
-  <meta name="twitter:description" content="Websites, full‑stack development, digital marketing, recruitment, cloud/DevOps & live online training." />
-  <meta name="twitter:image" content="https://infisgroup.com/og-image.jpg" />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:site_name" content="InfisGroup" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://infisgroup.com/" />
+    <meta
+      property="og:title"
+      content="InfisGroup — Build • Market • Hire • Train"
+    />
+    <meta
+      property="og:description"
+      content="Websites, full‑stack development, digital marketing, recruitment, cloud/DevOps & live online training."
+    />
+    <meta property="og:image" content="https://infisgroup.com/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="InfisGroup — Build • Market • Hire • Train"
+    />
+    <meta
+      name="twitter:description"
+      content="Websites, full‑stack development, digital marketing, recruitment, cloud/DevOps & live online training."
+    />
+    <meta name="twitter:image" content="https://infisgroup.com/og-image.jpg" />
 
-  <!-- Favicon / PWA placeholders (replace with your files) -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- Favicon / PWA placeholders (replace with your files) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root{ --brand1:#8A1538; --brand2:#B7325D; --ink:#0f172a; }
-    .brand-gradient{ background-image:linear-gradient(135deg,var(--brand1),var(--brand2)); }
-    .soft-grad{ background-image:radial-gradient(900px 500px at 0% 0%, rgba(138,21,56,.12), transparent 60%), radial-gradient(900px 600px at 100% 0%, rgba(183,50,93,.18), transparent 60%); }
-    html{ scroll-behavior:smooth; }
-    section[id]{ scroll-margin-top:92px; }
-    @keyframes blob { 0%,100%{ transform: translate(0,0) scale(1); } 33%{ transform: translate(8px,-6px) scale(1.02);} 66%{ transform: translate(-6px,8px) scale(0.98);} }
-    .blob { animation: blob 12s ease-in-out infinite; }
-    @keyframes fadeUp { from{opacity:0; transform: translateY(18px);} to{opacity:1; transform: none;} }
-    .reveal { opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.in{ opacity:1; transform:none; }
-    .focus-ring{ outline:2px solid transparent; outline-offset:2px; box-shadow:0 0 0 3px rgba(138,21,56,.35); }
-    /* 1. Animated Gradient Background (using your variables) */
-.brand-gradient-animated {
-    background: linear-gradient(-45deg, var(--brand1), var(--brand2), #4f46e5, var(--brand1));
-    background-size: 400% 400%;
-    animation: gradient-animation 15s ease infinite;
-}
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --brand1: #8a1538;
+        --brand2: #b7325d;
+        --ink: #0f172a;
+      }
+      .brand-gradient {
+        background-image: linear-gradient(135deg, var(--brand1), var(--brand2));
+      }
+      .soft-grad {
+        background-image: radial-gradient(
+            900px 500px at 0% 0%,
+            rgba(138, 21, 56, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 600px at 100% 0%,
+            rgba(183, 50, 93, 0.18),
+            transparent 60%
+          );
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      section[id] {
+        scroll-margin-top: 92px;
+      }
+      @keyframes blob {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(8px, -6px) scale(1.02);
+        }
+        66% {
+          transform: translate(-6px, 8px) scale(0.98);
+        }
+      }
+      .blob {
+        animation: blob 12s ease-in-out infinite;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .focus-ring {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.35);
+      }
+      /* 1. Animated Gradient Background (using your variables) */
+      .brand-gradient-animated {
+        background: linear-gradient(
+          -45deg,
+          var(--brand1),
+          var(--brand2),
+          #4f46e5,
+          var(--brand1)
+        );
+        background-size: 400% 400%;
+        animation: gradient-animation 15s ease infinite;
+      }
 
-@keyframes gradient-animation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-/* 2. Gradient Text for the Headline */
-.hero-gradient-text {
-    background: linear-gradient(to right, #f9a8d4, #fef08a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-}
+      /* 2. Gradient Text for the Headline */
+      .hero-gradient-text {
+        background: linear-gradient(to right, #f9a8d4, #fef08a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
 
-/* 3. Enhanced "Glass" Card with on-brand hover effect */
-.glass-card {
-    position: relative;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
+      /* 3. Enhanced "Glass" Card with on-brand hover effect */
+      .glass-card {
+        position: relative;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
 
-.glass-card:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+      .glass-card:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
 
-/* 4. Improved Button Styles */
-.btn {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
-    font-weight: 500;
-    transition: all 0.2s ease-in-out;
-    transform: scale(1);
-    text-align: center;
-    border: 1px solid transparent; /* Base border */
-}
-/* This applies your existing focus-ring style on keyboard focus */
-.btn:focus-visible {
-    outline:2px solid transparent;
-    outline-offset:2px;
-    box-shadow:0 0 0 3px rgba(138,21,56,.35);
-}
+      /* 4. Improved Button Styles */
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+        transform: scale(1);
+        text-align: center;
+        border: 1px solid transparent; /* Base border */
+      }
+      /* This applies your existing focus-ring style on keyboard focus */
+      .btn:focus-visible {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.35);
+      }
 
-.btn-primary {
-    color: var(--ink);
-    background-color: #ffffff;
-}
+      .btn-primary {
+        color: var(--ink);
+        background-color: #ffffff;
+      }
 
-.btn-primary:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
+      .btn-primary:hover {
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      }
 
-.btn-secondary {
-    border-color: rgba(255, 255, 255, 0.6);
-}
+      .btn-secondary {
+        border-color: rgba(255, 255, 255, 0.6);
+      }
 
-.btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.05) translateY(-2px);
-}
-  </style>
+      .btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.9);
+        transform: scale(1.05) translateY(-2px);
+      }
+    </style>
 
-  <!-- JSON‑LD Organization & Website -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "InfisGroup",
-    "url": "https://infisgroup.com/",
-    "logo": "https://infisgroup.com/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/infisgroup",
-      "https://twitter.com/infisgroup"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "InfisGroup",
-    "url": "https://infisgroup.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://infisgroup.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-</head>
+    <!-- JSON‑LD Organization & Website -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "InfisGroup",
+        "url": "https://infisgroup.com/",
+        "logo": "https://infisgroup.com/logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/infisgroup",
+          "https://twitter.com/infisgroup"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "InfisGroup",
+        "url": "https://infisgroup.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://infisgroup.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
 
-<body class="text-slate-900 antialiased">
-  <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2" aria-label="InfisGroup home">
-        <span class="w-9 h-9 rounded-2xl brand-gradient"></span>
-        <span class="font-semibold tracking-tight">InfisGroup</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#services" class="hover:text-[var(--brand1)]">Services</a>
-        <a href="#training" class="hover:text-[var(--brand1)]">Training</a>
-        <a href="#about" class="hover:text-[var(--brand1)]">About</a>
-        <a href="#contact" class="hover:text-[var(--brand1)]">Contact</a>
-        <a href="#cta" class="inline-flex items-center rounded-xl px-4 py-2 text-white brand-gradient hover:opacity-95">Get a Quote</a>
-      </nav>
-      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-slate-300" aria-label="Open menu">☰</button>
-    </div>
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-2">
-        <a href="#services" class="block py-2">Services</a>
-        <a href="#training" class="block py-2">Training</a>
-        <a href="#about" class="block py-2">About</a>
-        <a href="#contact" class="block py-2">Contact</a>
-        <a href="#cta" class="block py-2 text-center text-white rounded-xl brand-gradient">Get a Quote</a>
-      </nav>
-    </div>
-  </header>
+  <body class="text-slate-900 antialiased">
+    <!-- Header -->
+    <header
+      class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <a
+          href="#"
+          class="flex items-center gap-2"
+          aria-label="InfisGroup home"
+        >
+          <img
+            src="img/infis.png"
+            alt="InfisGroup logo"
+            class="h-9 w-9 rounded-2xl object-contain"
+            width="36"
+            height="36"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="font-semibold tracking-tight">InfisGroup</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#services" class="hover:text-[var(--brand1)]">Services</a>
+          <a href="#training" class="hover:text-[var(--brand1)]">Training</a>
+          <a href="#about" class="hover:text-[var(--brand1)]">About</a>
+          <a href="#contact" class="hover:text-[var(--brand1)]">Contact</a>
+          <a
+            href="#cta"
+            class="inline-flex items-center rounded-xl px-4 py-2 text-white brand-gradient hover:opacity-95"
+            >Get a Quote</a
+          >
+        </nav>
+        <button
+          id="menuBtn"
+          class="md:hidden p-2 rounded-lg border border-slate-300"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden border-t border-slate-200 bg-white"
+      >
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 space-y-2">
+          <a href="#services" class="block py-2">Services</a>
+          <a href="#training" class="block py-2">Training</a>
+          <a href="#about" class="block py-2">About</a>
+          <a href="#contact" class="block py-2">Contact</a>
+          <a
+            href="#cta"
+            class="block py-2 text-center text-white rounded-xl brand-gradient"
+            >Get a Quote</a
+          >
+        </nav>
+      </div>
+    </header>
 
-  <!-- Hero -->
-  <section class="pt-24 lg:pt-28 relative text-white overflow-hidden">
-    <div class="absolute inset-0 -z-10 brand-gradient-animated"></div>
-    <div class="absolute -top-16 -left-10 w-72 h-72 rounded-full blur-3xl opacity-30 bg-white blob"></div>
-    <div class="absolute -top-12 -right-16 w-96 h-96 rounded-full blur-3xl opacity-20 bg-white blob"></div>
+    <!-- Hero -->
+    <section class="pt-24 lg:pt-28 relative text-white overflow-hidden">
+      <div class="absolute inset-0 -z-10 brand-gradient-animated"></div>
+      <div
+        class="absolute -top-16 -left-10 w-72 h-72 rounded-full blur-3xl opacity-30 bg-white blob"
+      ></div>
+      <div
+        class="absolute -top-12 -right-16 w-96 h-96 rounded-full blur-3xl opacity-20 bg-white blob"
+      ></div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-10 items-center">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-2 gap-10 items-center"
+      >
         <div class="reveal">
-            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                Build. <span class="hero-gradient-text">Market.</span> Hire. <span class="hero-gradient-text">Train.</span>
-            </h1>
-            <p class="mt-4 text-lg text-white/90">We craft blazing-fast static sites, engineer scalable applications, and provide elite training in modern technology stacks.</p>
-            <div class="mt-8 flex flex-wrap gap-4">
-                <a href="#cta" class="btn btn-primary">Start a Project</a>
-                <a href="#training" class="btn btn-secondary">Explore Training</a>
-            </div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Build. <span class="hero-gradient-text">Market.</span> Hire.
+            <span class="hero-gradient-text">Train.</span>
+          </h1>
+          <p class="mt-4 text-lg text-white/90">
+            We craft blazing-fast static sites, engineer scalable applications,
+            and provide elite training in modern technology stacks.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#cta" class="btn btn-primary">Start a Project</a>
+            <a href="#training" class="btn btn-secondary">Explore Training</a>
+          </div>
         </div>
 
         <div class="reveal hidden lg:block">
-            <div class="glass-card">
-                <ul class="space-y-4">
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8" style="color:#B7325D;"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-                        </div>
-                        <span>Core Web Vitals optimized (LCP, CLS, INP)</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 flex-shrink-0">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8" style="color:#B7325D;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" /></svg>
-                        </div>
-                        <span>Security best practices & privacy‑first analytics</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 flex-shrink-0">
-                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8" style="color:#B7325D;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m17.432 0A12.016 12.016 0 0112 15c-1.614 0-3.13-.31-4.5-.865" /></svg>
-                        </div>
-                        <span>Global edge delivery (CDN) & advanced SEO</span>
-                    </li>
-                </ul>
+          <div class="glass-card">
+            <ul class="space-y-4">
+              <li class="flex items-center gap-4">
+                <div class="w-8 h-8 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-8 h-8"
+                    style="color: #b7325d"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                    />
+                  </svg>
+                </div>
+                <span>Core Web Vitals optimized (LCP, CLS, INP)</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-8 h-8 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-8 h-8"
+                    style="color: #b7325d"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z"
+                    />
+                  </svg>
+                </div>
+                <span>Security best practices & privacy‑first analytics</span>
+              </li>
+              <li class="flex items-center gap-4">
+                <div class="w-8 h-8 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-8 h-8"
+                    style="color: #b7325d"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m17.432 0A12.016 12.016 0 0112 15c-1.614 0-3.13-.31-4.5-.865"
+                    />
+                  </svg>
+                </div>
+                <span>Global edge delivery (CDN) & advanced SEO</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services with scrollable Tabs -->
+    <section id="services" class="py-16 soft-grad">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <h2 class="text-3xl font-bold">Our Services</h2>
+          <p class="mt-2 text-slate-600">
+            Clear deliverables, modern stack, on‑time and within budget.
+          </p>
+        </div>
+
+        <!-- Tabs -->
+        <div
+          class="mt-8 overflow-x-auto no-scrollbar"
+          role="tablist"
+          aria-label="Service categories"
+        >
+          <div class="inline-flex gap-2 min-w-max">
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300 data-[active=true]:text-white data-[active=true]:bg-[var(--brand1)]"
+              role="tab"
+              aria-selected="true"
+              aria-controls="grid-all"
+              id="tab-all"
+              data-target="all"
+            >
+              All
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-web"
+              id="tab-web"
+              data-target="web"
+            >
+              Static Web
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-full"
+              id="tab-full"
+              data-target="full"
+            >
+              Full‑Stack
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-mkt"
+              id="tab-mkt"
+              data-target="mkt"
+            >
+              Marketing
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-rec"
+              id="tab-rec"
+              data-target="rec"
+            >
+              Recruitment
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-cloud"
+              id="tab-cloud"
+              data-target="cloud"
+            >
+              Cloud/DevOps
+            </button>
+            <button
+              class="tab px-4 py-2 rounded-xl border border-slate-300"
+              role="tab"
+              aria-selected="false"
+              aria-controls="grid-other"
+              id="tab-other"
+              data-target="other"
+            >
+              Other
+            </button>
+          </div>
+        </div>
+
+        <!-- Grid -->
+        <div
+          class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          id="serviceGrid"
+        >
+          <!-- Cards (use data-cat for filtering) -->
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="web"
+          >
+            <h3 class="font-semibold text-lg">Static Websites</h3>
+            <p class="mt-2 text-slate-600">
+              Blazing‑fast, SEO‑friendly sites with modern design.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>Landing & marketing pages</li>
+              <li>Blogs & docs (Markdown)</li>
+              <li>Global CDN hosting</li>
+            </ul>
+          </article>
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="full"
+          >
+            <h3 class="font-semibold text-lg">Full‑Stack Development</h3>
+            <p class="mt-2 text-slate-600">
+              From APIs to dashboards—secure & scalable.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>ASP.NET Core / Node.js</li>
+              <li>React / Next.js</li>
+              <li>SQL / NoSQL</li>
+            </ul>
+          </article>
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="mkt"
+          >
+            <h3 class="font-semibold text-lg">Digital Marketing</h3>
+            <p class="mt-2 text-slate-600">
+              Get found & convert: SEO, ads, social, analytics.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>SEO & content</li>
+              <li>Social & paid campaigns</li>
+              <li>Conversion tracking</li>
+            </ul>
+          </article>
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="rec"
+          >
+            <h3 class="font-semibold text-lg">Recruitment</h3>
+            <p class="mt-2 text-slate-600">
+              We find talented people who fit your culture.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>Technical & non‑technical roles</li>
+              <li>Screening & shortlisting</li>
+              <li>Interview support</li>
+            </ul>
+          </article>
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="cloud"
+          >
+            <h3 class="font-semibold text-lg">Cloud & DevOps</h3>
+            <p class="mt-2 text-slate-600">
+              Ship reliably with modern CI/CD and cloud infra.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>Azure / AWS / Cloudflare</li>
+              <li>Docker & Kubernetes</li>
+              <li>Monitoring & security</li>
+            </ul>
+          </article>
+          <article
+            class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition"
+            data-cat="other"
+          >
+            <h3 class="font-semibold text-lg">Other Services</h3>
+            <p class="mt-2 text-slate-600">
+              UX, performance, accessibility, multilingual.
+            </p>
+            <ul class="mt-3 text-sm list-disc list-inside text-slate-700">
+              <li>Design systems</li>
+              <li>Performance audits</li>
+              <li>Content localization</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training -->
+    <section id="training" class="py-16">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start"
+      >
+        <div class="reveal">
+          <h2 class="text-3xl font-bold">Live Online Training</h2>
+          <p class="mt-3 text-slate-600">
+            Hands‑on, project‑based training for teams and individuals. Flexible
+            timing for Qatar, India, and global learners.
+          </p>
+          <ul class="mt-4 space-y-2 text-slate-700">
+            <li>• Frontend: React, Next.js, Tailwind, TypeScript</li>
+            <li>• Backend: ASP.NET Core, Node.js, REST & GraphQL</li>
+            <li>• DevOps: Git, Docker, Kubernetes, Azure DevOps</li>
+            <li>• Data & AI (intro): Python basics, ML fundamentals</li>
+            <li>• Architecture & Clean Code for .NET/JS</li>
+          </ul>
+          <a
+            href="#cta"
+            class="inline-block mt-6 rounded-xl px-5 py-3 text-white brand-gradient"
+            >Book a Free Session</a
+          >
+        </div>
+        <div class="reveal">
+          <div
+            class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm"
+          >
+            <h3 class="font-semibold">What you get</h3>
+            <ul class="mt-3 text-sm space-y-2 text-slate-700">
+              <li>✓ Live classes + recordings</li>
+              <li>✓ Capstone project & code reviews</li>
+              <li>✓ Interview prep & portfolio polish</li>
+              <li>✓ Certificates from InfisGroup</li>
+            </ul>
+            <p class="mt-4 text-sm text-slate-500">
+              Want corporate training? We tailor curricula to your stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16 soft-grad">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center"
+      >
+        <div class="reveal">
+          <h2 class="text-3xl font-bold">Why InfisGroup?</h2>
+          <p class="mt-3 text-slate-600">
+            Simple process, transparent pricing, measurable outcomes. We build
+            for speed, security, and longevity.
+          </p>
+          <ul class="mt-4 space-y-2 text-slate-700">
+            <li>• Mobile‑first, responsive layouts</li>
+            <li>• Best practices for SEO & Core Web Vitals</li>
+            <li>• CI/CD from Git with preview deployments</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="rounded-2xl border border-slate-200 p-6 bg-white">
+            <h3 class="font-semibold">Stack & Platforms</h3>
+            <p class="mt-2 text-sm text-slate-700">
+              Astro, Next.js, React, Tailwind CSS, ASP.NET Core, Node.js, Azure,
+              Cloudflare, Netlify.
+            </p>
+            <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <div class="rounded-xl border p-4">Static hosting (CDN)</div>
+              <div class="rounded-xl border p-4">Headless CMS ready</div>
+              <div class="rounded-xl border p-4">Analytics (Plausible/GA4)</div>
+              <div class="rounded-xl border p-4">Accessibility (WCAG)</div>
             </div>
-        </div>
-    </div>
-</section>
-
-  <!-- Services with scrollable Tabs -->
-  <section id="services" class="py-16 soft-grad">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto reveal">
-        <h2 class="text-3xl font-bold">Our Services</h2>
-        <p class="mt-2 text-slate-600">Clear deliverables, modern stack, on‑time and within budget.</p>
-      </div>
-
-      <!-- Tabs -->
-      <div class="mt-8 overflow-x-auto no-scrollbar" role="tablist" aria-label="Service categories">
-        <div class="inline-flex gap-2 min-w-max">
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300 data-[active=true]:text-white data-[active=true]:bg-[var(--brand1)]" role="tab" aria-selected="true" aria-controls="grid-all" id="tab-all" data-target="all">All</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-web" id="tab-web" data-target="web">Static Web</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-full" id="tab-full" data-target="full">Full‑Stack</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-mkt" id="tab-mkt" data-target="mkt">Marketing</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-rec" id="tab-rec" data-target="rec">Recruitment</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-cloud" id="tab-cloud" data-target="cloud">Cloud/DevOps</button>
-          <button class="tab px-4 py-2 rounded-xl border border-slate-300" role="tab" aria-selected="false" aria-controls="grid-other" id="tab-other" data-target="other">Other</button>
-        </div>
-      </div>
-
-      <!-- Grid -->
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="serviceGrid">
-        <!-- Cards (use data-cat for filtering) -->
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="web">
-          <h3 class="font-semibold text-lg">Static Websites</h3>
-          <p class="mt-2 text-slate-600">Blazing‑fast, SEO‑friendly sites with modern design.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>Landing & marketing pages</li><li>Blogs & docs (Markdown)</li><li>Global CDN hosting</li></ul>
-        </article>
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="full">
-          <h3 class="font-semibold text-lg">Full‑Stack Development</h3>
-          <p class="mt-2 text-slate-600">From APIs to dashboards—secure & scalable.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>ASP.NET Core / Node.js</li><li>React / Next.js</li><li>SQL / NoSQL</li></ul>
-        </article>
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="mkt">
-          <h3 class="font-semibold text-lg">Digital Marketing</h3>
-          <p class="mt-2 text-slate-600">Get found & convert: SEO, ads, social, analytics.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>SEO & content</li><li>Social & paid campaigns</li><li>Conversion tracking</li></ul>
-        </article>
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="rec">
-          <h3 class="font-semibold text-lg">Recruitment</h3>
-          <p class="mt-2 text-slate-600">We find talented people who fit your culture.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>Technical & non‑technical roles</li><li>Screening & shortlisting</li><li>Interview support</li></ul>
-        </article>
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="cloud">
-          <h3 class="font-semibold text-lg">Cloud & DevOps</h3>
-          <p class="mt-2 text-slate-600">Ship reliably with modern CI/CD and cloud infra.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>Azure / AWS / Cloudflare</li><li>Docker & Kubernetes</li><li>Monitoring & security</li></ul>
-        </article>
-        <article class="card reveal p-6 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-lg transition" data-cat="other">
-          <h3 class="font-semibold text-lg">Other Services</h3>
-          <p class="mt-2 text-slate-600">UX, performance, accessibility, multilingual.</p>
-          <ul class="mt-3 text-sm list-disc list-inside text-slate-700"><li>Design systems</li><li>Performance audits</li><li>Content localization</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Training -->
-  <section id="training" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-start">
-      <div class="reveal">
-        <h2 class="text-3xl font-bold">Live Online Training</h2>
-        <p class="mt-3 text-slate-600">Hands‑on, project‑based training for teams and individuals. Flexible timing for Qatar, India, and global learners.</p>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li>• Frontend: React, Next.js, Tailwind, TypeScript</li>
-          <li>• Backend: ASP.NET Core, Node.js, REST & GraphQL</li>
-          <li>• DevOps: Git, Docker, Kubernetes, Azure DevOps</li>
-          <li>• Data & AI (intro): Python basics, ML fundamentals</li>
-          <li>• Architecture & Clean Code for .NET/JS</li>
-        </ul>
-        <a href="#cta" class="inline-block mt-6 rounded-xl px-5 py-3 text-white brand-gradient">Book a Free Session</a>
-      </div>
-      <div class="reveal">
-        <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-          <h3 class="font-semibold">What you get</h3>
-          <ul class="mt-3 text-sm space-y-2 text-slate-700">
-            <li>✓ Live classes + recordings</li>
-            <li>✓ Capstone project & code reviews</li>
-            <li>✓ Interview prep & portfolio polish</li>
-            <li>✓ Certificates from InfisGroup</li>
-          </ul>
-          <p class="mt-4 text-sm text-slate-500">Want corporate training? We tailor curricula to your stack.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 soft-grad">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
-      <div class="reveal">
-        <h2 class="text-3xl font-bold">Why InfisGroup?</h2>
-        <p class="mt-3 text-slate-600">Simple process, transparent pricing, measurable outcomes. We build for speed, security, and longevity.</p>
-        <ul class="mt-4 space-y-2 text-slate-700">
-          <li>• Mobile‑first, responsive layouts</li>
-          <li>• Best practices for SEO & Core Web Vitals</li>
-          <li>• CI/CD from Git with preview deployments</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <div class="rounded-2xl border border-slate-200 p-6 bg-white">
-          <h3 class="font-semibold">Stack & Platforms</h3>
-          <p class="mt-2 text-sm text-slate-700">Astro, Next.js, React, Tailwind CSS, ASP.NET Core, Node.js, Azure, Cloudflare, Netlify.</p>
-          <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-            <div class="rounded-xl border p-4">Static hosting (CDN)</div>
-            <div class="rounded-xl border p-4">Headless CMS ready</div>
-            <div class="rounded-xl border p-4">Analytics (Plausible/GA4)</div>
-            <div class="rounded-xl border p-4">Accessibility (WCAG)</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section id="cta" class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl text-white p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 brand-gradient reveal">
-        <div>
-          <h2 class="text-2xl md:text-3xl font-bold">Ready to launch or learn?</h2>
-          <p class="mt-2 text-white/90">Tell us about your goals. We’ll reply within one business day.</p>
-        </div>
-        <a href="#contact" class="bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90">Contact Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact (Netlify‑ready static form) -->
-  <section id="contact" class="py-16 soft-grad">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10">
-      <div class="reveal">
-        <h2 class="text-3xl font-bold">Contact Us</h2>
-        <p class="mt-3 text-slate-600">Prefer email or WhatsApp? Use the form or write to <a class="underline text-[var(--brand1)]" href="mailto:info@infisgroup.com">info@infisgroup.com</a>.</p>
-        <ul class="mt-6 space-y-2 text-slate-700 text-sm">
-          <li>• Doha, Qatar (remote worldwide)</li>
-          <li>• Mon–Fri, 9:00–18:00</li>
-        </ul>
-      </div>
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reveal rounded-2xl border border-slate-200 p-6 bg-white space-y-4 shadow-sm">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>
-        <div>
-          <label class="block text-sm font-medium">Name</label>
-          <input name="name" type="text" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none" placeholder="Your name" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Email</label>
-          <input name="email" type="email" required class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none" placeholder="you@example.com" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Project / Training Type</label>
-          <select name="type" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none">
-            <option>Static Website</option>
-            <option>Full‑stack Development</option>
-            <option>Digital Marketing</option>
-            <option>Recruitment</option>
-            <option>Cloud & DevOps</option>
-            <option>Online Training</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-medium">Message</label>
-          <textarea name="message" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none" placeholder="Tell us about your goals…"></textarea>
-        </div>
-        <button type="submit" class="w-full px-4 py-3 rounded-xl font-semibold text-white brand-gradient hover:opacity-95">Send Message</button>
-        <p class="text-xs text-slate-500">This form works automatically on Netlify. Or connect Formspree/Azure Functions.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- FAQ (SEO) -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center">FAQ</h2>
-      <div class="mt-8 grid gap-4 md:grid-cols-2">
-        <details class="reveal rounded-2xl border border-slate-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">Do you provide online training?</summary>
-          <p class="mt-2 text-slate-600">Yes—live, project‑based sessions for React, Next.js, ASP.NET Core, Node.js, DevOps, and more. Certificates included.</p>
-        </details>
-        <details class="reveal rounded-2xl border border-slate-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">How fast can you launch a website?</summary>
-          <p class="mt-2 text-slate-600">Simple landing pages can launch in days. Larger sites/apps include a clear roadmap with milestones and previews.</p>
-        </details>
-        <details class="reveal rounded-2xl border border-slate-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">Which hosting do you recommend?</summary>
-          <p class="mt-2 text-slate-600">Cloudflare Pages / Netlify for static, Vercel or Azure for Next.js & APIs. We configure CDN, HTTPS, and CI/CD.</p>
-        </details>
-        <details class="reveal rounded-2xl border border-slate-200 p-5 bg-white">
-          <summary class="font-semibold cursor-pointer">Can you help with SEO and analytics?</summary>
-          <p class="mt-2 text-slate-600">Yes—technical SEO, structured data, sitemap/robots, and privacy‑friendly analytics (Plausible or GA4).</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="relative pt-14 bg-slate-950 text-slate-200">
-    <div class="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-[var(--brand1)] via-rose-400 to-[var(--brand2)]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 md:grid-cols-4">
-        <div>
-          <div class="flex items-center gap-3">
-            <span class="w-9 h-9 rounded-2xl brand-gradient"></span>
-            <span class="font-semibold">InfisGroup</span>
+    <!-- CTA -->
+    <section id="cta" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="rounded-3xl text-white p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 brand-gradient reveal"
+        >
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold">
+              Ready to launch or learn?
+            </h2>
+            <p class="mt-2 text-white/90">
+              Tell us about your goals. We’ll reply within one business day.
+            </p>
           </div>
-          <p class="mt-3 text-sm text-slate-400">We design and build delightful web experiences that grow with your business.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold">Company</h4>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300">
-            <li><a class="hover:text-white" href="#about">About</a></li>
-            <li><a class="hover:text-white" href="#services">Services</a></li>
-            <li><a class="hover:text-white" href="#training">Training</a></li>
-            <li><a class="hover:text-white" href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold">Resources</h4>
-          <ul class="mt-3 space-y-2 text-sm text-slate-300">
-            <li><a class="hover:text-white" href="/sitemap.xml">Sitemap</a></li>
-            <li><a class="hover:text-white" href="/privacy">Privacy</a></li>
-            <li><a class="hover:text-white" href="/terms">Terms</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold">Newsletter</h4>
-          <p class="mt-2 text-sm text-slate-400">Get tips on performance, SEO, and product growth.</p>
-          <form class="mt-4 flex gap-2" onsubmit="event.preventDefault(); localStorage.setItem('ig_news', '1'); alert('Subscribed!');">
-            <input type="email" required placeholder="you@example.com" class="min-w-0 flex-1 rounded-xl bg-white/10 border border-white/10 px-3 py-2 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-400"/>
-            <button class="px-4 py-2 rounded-xl font-medium text-slate-900 bg-white hover:opacity-95">Subscribe</button>
-          </form>
+          <a
+            href="#contact"
+            class="bg-white text-slate-900 px-6 py-3 rounded-xl font-semibold hover:opacity-90"
+            >Contact Us</a
+          >
         </div>
       </div>
-      <div class="mt-10 border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-        <p>© <span id="year"></span> InfisGroup. All rights reserved.</p>
-        <p>Built for speed • SEO‑ready • Global CDN</p>
+    </section>
+
+    <!-- Contact (Netlify‑ready static form) -->
+    <section id="contact" class="py-16 soft-grad">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10"
+      >
+        <div class="reveal">
+          <h2 class="text-3xl font-bold">Contact Us</h2>
+          <p class="mt-3 text-slate-600">
+            Prefer email or WhatsApp? Use the form or write to
+            <a
+              class="underline text-[var(--brand1)]"
+              href="mailto:info@infisgroup.com"
+              >info@infisgroup.com</a
+            >.
+          </p>
+          <ul class="mt-6 space-y-2 text-slate-700 text-sm">
+            <li>• Doha, Qatar (remote worldwide)</li>
+            <li>• Mon–Fri, 9:00–18:00</li>
+          </ul>
+        </div>
+        <form
+          id="contactForm"
+          action="https://formspree.io/f/xpwjanvp"
+          method="POST"
+          class="reveal rounded-2xl border border-slate-200 p-6 bg-white space-y-4 shadow-sm"
+        >
+          <!-- Honeypot (spam trap) -->
+          <input
+            type="text"
+            name="website"
+            value="Infisgroup.com"
+            class="hidden"
+            tabindex="-1"
+            autocomplete="off"
+          />
+          <!-- Nice email subject + JS-less fallback redirect -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="New contact from InfisGroup"
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://www.infisgroup.com/#contact"
+          />
+
+          <div>
+            <label class="block text-sm font-medium">Name</label>
+            <input
+              name="name"
+              type="text"
+              required
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">Email</label>
+            <input
+              name="email"
+              type="email"
+              required
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium"
+              >Project / Training Type</label
+            >
+            <select
+              name="type"
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none"
+            >
+              <option>Static Website</option>
+              <option>Full-stack Development</option>
+              <option>Digital Marketing</option>
+              <option>Recruitment</option>
+              <option>Cloud & DevOps</option>
+              <option>Online Training</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium">Message</label>
+            <textarea
+              name="message"
+              rows="4"
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-[var(--brand1)] outline-none"
+              placeholder="Tell us about your goals…"
+            ></textarea>
+          </div>
+
+          <label class="flex items-start gap-2 text-sm text-slate-600">
+            <input type="checkbox" required class="mt-0.5" />
+            I agree to be contacted about my inquiry.
+          </label>
+
+          <button
+            id="submitBtn"
+            type="submit"
+            class="w-full px-4 py-3 rounded-xl font-semibold text-white brand-gradient hover:opacity-95"
+          >
+            Send Message
+          </button>
+
+          <!-- Inline status line (same typography) -->
+          <p id="formStatus" class="text-xs text-slate-600"></p>
+
+          <!-- Optional toast (keeps design on brand) -->
+          <div
+            id="formToast"
+            class="hidden mt-3 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-800 text-sm border border-emerald-200"
+          >
+            Thanks! We’ll get back to you shortly.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ (SEO) -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center">FAQ</h2>
+        <div class="mt-8 grid gap-4 md:grid-cols-2">
+          <details
+            class="reveal rounded-2xl border border-slate-200 p-5 bg-white"
+          >
+            <summary class="font-semibold cursor-pointer">
+              Do you provide online training?
+            </summary>
+            <p class="mt-2 text-slate-600">
+              Yes—live, project‑based sessions for React, Next.js, ASP.NET Core,
+              Node.js, DevOps, and more. Certificates included.
+            </p>
+          </details>
+          <details
+            class="reveal rounded-2xl border border-slate-200 p-5 bg-white"
+          >
+            <summary class="font-semibold cursor-pointer">
+              How fast can you launch a website?
+            </summary>
+            <p class="mt-2 text-slate-600">
+              Simple landing pages can launch in days. Larger sites/apps include
+              a clear roadmap with milestones and previews.
+            </p>
+          </details>
+          <details
+            class="reveal rounded-2xl border border-slate-200 p-5 bg-white"
+          >
+            <summary class="font-semibold cursor-pointer">
+              Which hosting do you recommend?
+            </summary>
+            <p class="mt-2 text-slate-600">
+              Cloudflare Pages / Netlify for static, Vercel or Azure for Next.js
+              & APIs. We configure CDN, HTTPS, and CI/CD.
+            </p>
+          </details>
+          <details
+            class="reveal rounded-2xl border border-slate-200 p-5 bg-white"
+          >
+            <summary class="font-semibold cursor-pointer">
+              Can you help with SEO and analytics?
+            </summary>
+            <p class="mt-2 text-slate-600">
+              Yes—technical SEO, structured data, sitemap/robots, and
+              privacy‑friendly analytics (Plausible or GA4).
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative pt-14 bg-slate-950 text-slate-200">
+      <div
+        class="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-[var(--brand1)] via-rose-400 to-[var(--brand2)]"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 md:grid-cols-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <img
+                src="img/infis.png"
+                alt="InfisGroup logo"
+                class="h-9 w-9 rounded-2xl object-contain"
+                width="36"
+                height="36"
+                loading="eager"
+                decoding="async"
+              />
+              <span class="font-semibold">InfisGroup</span>
+            </div>
+            <p class="mt-3 text-sm text-slate-400">
+              We design and build delightful web experiences that grow with your
+              business.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold">Company</h4>
+            <ul class="mt-3 space-y-2 text-sm text-slate-300">
+              <li><a class="hover:text-white" href="#about">About</a></li>
+              <li><a class="hover:text-white" href="#services">Services</a></li>
+              <li><a class="hover:text-white" href="#training">Training</a></li>
+              <li><a class="hover:text-white" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold">Resources</h4>
+            <ul class="mt-3 space-y-2 text-sm text-slate-300">
+              <li>
+                <a class="hover:text-white" href="/sitemap.xml">Sitemap</a>
+              </li>
+              <li><a class="hover:text-white" href="/privacy">Privacy</a></li>
+              <li><a class="hover:text-white" href="/terms">Terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold">Newsletter</h4>
+            <p class="mt-2 text-sm text-slate-400">
+              Get tips on performance, SEO, and product growth.
+            </p>
+            <form
+              class="mt-4 flex gap-2"
+              onsubmit="event.preventDefault(); localStorage.setItem('ig_news', '1'); alert('Subscribed!');"
+            >
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                class="min-w-0 flex-1 rounded-xl bg-white/10 border border-white/10 px-3 py-2 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-400"
+              />
+              <button
+                class="px-4 py-2 rounded-xl font-medium text-slate-900 bg-white hover:opacity-95"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="mt-10 border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400"
+        >
+          <p>© <span id="year"></span> InfisGroup. All rights reserved.</p>
+          <p>Built for speed • SEO‑ready • Global CDN</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional cookie banner -->
+    <div
+      id="cookie"
+      class="hidden fixed bottom-4 inset-x-4 md:inset-x-auto md:right-4 z-[60] max-w-xl rounded-2xl border border-slate-200 bg-white shadow-lg p-4"
+    >
+      <p class="text-sm text-slate-700">
+        We use privacy‑friendly analytics to improve this site. By using it, you
+        agree to our <a href="/privacy" class="underline">Privacy Policy</a>.
+      </p>
+      <div class="mt-3 flex gap-2">
+        <button
+          id="cookie-ok"
+          class="px-4 py-2 rounded-xl text-white brand-gradient"
+        >
+          Accept
+        </button>
+        <button id="cookie-close" class="px-4 py-2 rounded-xl border">
+          Close
+        </button>
       </div>
     </div>
-  </footer>
 
-  <!-- Optional cookie banner -->
-  <div id="cookie" class="hidden fixed bottom-4 inset-x-4 md:inset-x-auto md:right-4 z-[60] max-w-xl rounded-2xl border border-slate-200 bg-white shadow-lg p-4">
-    <p class="text-sm text-slate-700">We use privacy‑friendly analytics to improve this site. By using it, you agree to our <a href="/privacy" class="underline">Privacy Policy</a>.</p>
-    <div class="mt-3 flex gap-2">
-      <button id="cookie-ok" class="px-4 py-2 rounded-xl text-white brand-gradient">Accept</button>
-      <button id="cookie-close" class="px-4 py-2 rounded-xl border">Close</button>
-    </div>
-  </div>
+    <script>
+      (() => {
+        const ready = (fn) =>
+          document.readyState !== "loading"
+            ? fn()
+            : document.addEventListener("DOMContentLoaded", fn);
 
-  <script>
-    // Year & mobile menu
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('mobileMenu');
-    btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+        ready(() => {
+          /* YEAR & MOBILE MENU */
+          const yearEl = document.getElementById("year");
+          if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, { threshold: 0.14 });
-    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+          const menuBtn = document.getElementById("menuBtn");
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener("click", () =>
+              mobileMenu.classList.toggle("hidden")
+            );
+          }
 
-    // Tabs filter
-    const tabs = Array.from(document.querySelectorAll('.tab'));
-    const cards = Array.from(document.querySelectorAll('#serviceGrid .card'));
-    function setActive(target){
-      tabs.forEach(t=>{ const active = t.dataset.target === target || (target==='all' && t.dataset.target==='all'); t.dataset.active = (t.id==='tab-'+target).toString(); t.setAttribute('aria-selected', t.id==='tab-'+target); });
-      cards.forEach(c=>{ c.classList.remove('hidden'); if(target!=='all' && c.dataset.cat !== target){ c.classList.add('hidden'); } });
-    }
-    tabs.forEach(t=> t.addEventListener('click', ()=> setActive(t.dataset.target)));
-    setActive('all');
+          /* REVEAL ON SCROLL (single observer) */
+          const revealEls = document.querySelectorAll(".reveal");
+          if ("IntersectionObserver" in window && revealEls.length) {
+            const io = new IntersectionObserver(
+              (entries, obs) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("in");
+                    obs.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.14 }
+            );
+            revealEls.forEach((el) => io.observe(el));
+          } else {
+            revealEls.forEach((el) => el.classList.add("in"));
+          }
 
-    // Cookie banner minimal
-    try{
-      if(!localStorage.getItem('ig_cookie')){
-        const cb = document.getElementById('cookie');
-        cb.classList.remove('hidden');
-        document.getElementById('cookie-ok').onclick = ()=>{ localStorage.setItem('ig_cookie','1'); cb.remove(); };
-        document.getElementById('cookie-close').onclick = ()=> cb.remove();
-      }
-    }catch{ /* ignore */ }
-  </script>
+          /* TABS FILTER */
+          const tabs = Array.from(document.querySelectorAll(".tab"));
+          const cards = Array.from(
+            document.querySelectorAll("#serviceGrid .card")
+          );
+          const setActive = (target) => {
+            tabs.forEach((t) => {
+              const isActive =
+                t.dataset.target === target ||
+                (target === "all" && t.dataset.target === "all");
+              t.dataset.active = String(isActive);
+              t.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+            cards.forEach((c) => {
+              c.classList.toggle(
+                "hidden",
+                target !== "all" && c.dataset.cat !== target
+              );
+            });
+          };
+          if (tabs.length && cards.length) {
+            tabs.forEach((t) =>
+              t.addEventListener("click", () => setActive(t.dataset.target))
+            );
+            setActive("all");
+          }
 
-  <!-- FAQ JSON‑LD for rich results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type": "Question","name": "Do you provide online training?","acceptedAnswer": {"@type": "Answer","text": "Yes—live, project‑based sessions for React, Next.js, ASP.NET Core, Node.js, DevOps, and more."}},
-      {"@type": "Question","name": "How fast can you launch a website?","acceptedAnswer": {"@type": "Answer","text": "Landing pages in days; larger sites/apps have a clear roadmap with milestones and preview links."}},
-      {"@type": "Question","name": "Which hosting do you recommend?","acceptedAnswer": {"@type": "Answer","text": "Cloudflare Pages / Netlify for static; Vercel or Azure for Next.js & APIs with CI/CD."}},
-      {"@type": "Question","name": "Can you help with SEO and analytics?","acceptedAnswer": {"@type": "Answer","text": "Yes—technical SEO, structured data, sitemap/robots, and privacy‑friendly analytics (Plausible or GA4)."}}
-    ]
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // Check if the element is intersecting (visible)
-            if (entry.isIntersecting) {
-                // Add your '.in' class to trigger the animation
-                entry.target.classList.add("in");
-                // Optional: Stop observing the element once it's visible
-                revealObserver.unobserve(entry.target);
+          /* COOKIE BANNER */
+          try {
+            const cb = document.getElementById("cookie");
+            const ok = document.getElementById("cookie-ok");
+            const close = document.getElementById("cookie-close");
+            if (cb && !localStorage.getItem("ig_cookie")) {
+              cb.classList.remove("hidden");
+              ok &&
+                ok.addEventListener("click", () => {
+                  localStorage.setItem("ig_cookie", "1");
+                  cb.remove();
+                });
+              close && close.addEventListener("click", () => cb.remove());
             }
+          } catch (_) {
+            /* ignore */
+          }
+
+          /* CONTACT FORM (Formspree, no redirect) */
+          const form = document.getElementById("contactForm");
+          const submitBtn =
+            document.getElementById("submitBtn") ||
+            (form ? form.querySelector('button[type="submit"]') : null);
+          const statusEl = document.getElementById("formStatus");
+          const toast = document.getElementById("formToast"); // optional success box
+
+          if (form) {
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault(); // stop default navigation
+
+              // Honeypot: if filled, assume bot
+              if (form.website && form.website.value) return;
+
+              const endpoint = form.getAttribute("action");
+              if (!endpoint) {
+                statusEl && (statusEl.textContent = "Form endpoint missing.");
+                return;
+              }
+
+              const original = submitBtn ? submitBtn.textContent : null;
+              if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Sending…";
+              }
+              statusEl && (statusEl.textContent = "Sending…");
+
+              try {
+                const res = await fetch(endpoint, {
+                  method: "POST",
+                  body: new FormData(form),
+                  headers: { Accept: "application/json" }, // ask Formspree for JSON (no redirect)
+                });
+
+                if (res.ok) {
+                  form.reset();
+                  statusEl &&
+                    (statusEl.textContent =
+                      "Thanks! We'll get back to you shortly.");
+                  toast && toast.classList.remove("hidden");
+                } else {
+                  let msg = "Oops, something went wrong.";
+                  try {
+                    const data = await res.json();
+                    if (data && data.errors)
+                      msg = data.errors.map((e) => e.message).join(", ");
+                  } catch {}
+                  statusEl && (statusEl.textContent = msg);
+                }
+              } catch {
+                statusEl &&
+                  (statusEl.textContent = "Network error — please try again.");
+              } finally {
+                if (submitBtn && original != null) {
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = original;
+                }
+              }
+            });
+          }
         });
-    }, {
-        threshold: 0.1 // Triggers when 10% of the element is visible
-    });
+      })();
+    </script>
 
-    // Observe each .reveal element
-    revealElements.forEach(elem => {
-        revealObserver.observe(elem);
-    });
-});
-  </script>
-
-  <!-- Analytics placeholder (swap for GA4/Plausible) -->
-  <!-- <script defer data-domain="infisgroup.com" src="https://plausible.io/js/script.js"></script> -->
-</body>
+    <!-- Analytics placeholder (swap for GA4/Plausible) -->
+    <!-- <script defer data-domain="infisgroup.com" src="https://plausible.io/js/script.js"></script> -->
+  </body>
 </html>
