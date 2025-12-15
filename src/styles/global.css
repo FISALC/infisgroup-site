@@ -1,23 +1,23 @@
 :root {
   /* Brand Identity - Primary */
-  --brand-primary: #8A1538;
-  /* Deep Maroon / Burgundy */
+  --brand-primary: #0F172A;
+  /* Deep Navy Blue */
 
-  /* AI + Modern Tech - Secondary */
-  --brand-secondary: #6A1B9A;
-  /* Royal Purple */
+  /* Innovation - Secondary */
+  --brand-secondary: #6366F1;
+  /* Electric Indigo */
 
   /* Highlights / Buttons - Accent */
-  --brand-accent: #3b82f6;
-  /* Electric Blue */
+  --brand-accent: #14B8A6;
+  /* Vibrante Teal */
 
   /* Neutrals */
-  --bg-primary: #F5F5F5;
-  /* Soft Gray - Light Background */
+  --bg-primary: #F8FAFC;
+  /* Light Slate */
   --bg-secondary: #FFFFFF;
-  /* Pure White - Cards/Sections */
-  --bg-dark: #111827;
-  /* Dark Charcoal - For specific sections/Footer */
+  /* Pure White */
+  --bg-dark: #0F172A;
+  /* Dark Navy (Same as Primary) */
 
   --text-primary: #111827;
   /* Dark Charcoal */

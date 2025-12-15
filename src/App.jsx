@@ -1,27 +1,23 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Plans from './components/Plans';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import Portfolio from './components/Portfolio';
-import WhyChooseUs from './components/WhyChooseUs';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import WebDev from './components/WebDev';
+import Recruitment from './components/Recruitment';
+import Training from './components/Training';
+import About from './components/About';
+import Contact from './components/Contact'; // Assuming Contact component exists and can be used as a page
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <Hero />
-      <Plans />
-      <Features />
-      <HowItWorks />
-      <Portfolio />
-      <WhyChooseUs />
-      <FAQ />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/web-development" element={<WebDev />} />
+        <Route path="/recruitment" element={<Recruitment />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<div className="pt-24"><Contact /></div>} />
+      </Routes>
       <Footer />
     </div>
   );
