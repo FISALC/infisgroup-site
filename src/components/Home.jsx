@@ -127,6 +127,43 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Industry Coverage */}
+            <section className="py-20 bg-white">
+                <div className="container text-center">
+                    <p className="text-brand-secondary font-bold uppercase tracking-wider mb-8">Trusted Across Industries</p>
+                    <div className="flex flex-wrap justify-center gap-4 opacity-70">
+                        {['SaaS & Technology', 'Healthcare', 'Banking & Fintech', 'Manufacturing', 'Retail & E-commerce', 'Education'].map(ind => (
+                            <span key={ind} className="px-6 py-2 rounded-full border border-gray-200 text-lg font-medium text-gray-500">{ind}</span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials */}
+            <section className="py-24 bg-bg-primary">
+                <div className="container">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">What Our Partners Say</h2>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <div className="flex gap-1 text-brand-accent mb-4">★★★★★</div>
+                            <p className="text-lg text-secondary mb-6 italic">"InfisGroup transformed our recruitment process. We filled critical tech roles in half the time compared to our previous vendors."</p>
+                            <div>
+                                <h4 className="font-bold text-primary">Sarah Jenkins</h4>
+                                <p className="text-sm text-gray-500">HR Director, TechFlow</p>
+                            </div>
+                        </div>
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <div className="flex gap-1 text-brand-accent mb-4">★★★★★</div>
+                            <p className="text-lg text-secondary mb-6 italic">"Their web development team built a platform that isn't just fast, it's intelligent. Our conversions went up 40% immediately."</p>
+                            <div>
+                                <h4 className="font-bold text-primary">Mark Davids</h4>
+                                <p className="text-sm text-gray-500">CTO, HealthPlus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA Section */}
             <section className="py-24 text-center">
                 <div className="container">

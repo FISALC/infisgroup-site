@@ -1,67 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    const footerStyle = {
-        backgroundColor: 'var(--bg-dark)',
-        color: '#fff',
-        padding: '4rem 0 2rem',
-    };
-
-    const gridStyle = {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '3rem',
-        marginBottom: '3rem',
-    };
-
-    const colTitle = {
-        fontSize: '1.2rem',
-        marginBottom: '1.5rem',
-        fontFamily: 'var(--font-display)',
-        color: 'var(--brand-accent)',
-    };
-
-    const linkStyle = {
-        display: 'block',
-        marginBottom: '0.75rem',
-        color: '#9ca3af',
-        transition: '0.2s',
-    };
-
     return (
-        <footer style={footerStyle}>
+        <footer className="bg-bg-dark text-white pt-16 pb-8">
             <div className="container">
-                <div style={gridStyle}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     <div>
-                        <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'var(--font-display)' }}>InfisGroup</h3>
-                        <p style={{ color: '#9ca3af', lineHeight: '1.6' }}>
-                            AI-Powered Web Solutions for the modern enterprise and agile startups.
+                        <h3 className="text-2xl font-bold mb-4 font-display">InfisGroup</h3>
+                        <p className="text-gray-400 leading-relaxed">
+                            Empowering businesses with AI-powered web solutions, strategic talent acquisition, and world-class training.
                         </p>
                     </div>
 
                     <div>
-                        <h4 style={colTitle}>Services</h4>
-                        <a href="#plans" style={linkStyle}>Web Development</a>
-                        <a href="#plans" style={linkStyle}>AI Solutions</a>
-                        <a href="#plans" style={linkStyle}>Enterprise Platforms</a>
+                        <h4 className="text-lg font-bold mb-6 text-brand-accent">Services</h4>
+                        <ul className="space-y-3">
+                            <li><Link to="/web-development" className="text-gray-400 hover:text-white transition">Web Development</Link></li>
+                            <li><Link to="/recruitment" className="text-gray-400 hover:text-white transition">Recruitment</Link></li>
+                            <li><Link to="/training" className="text-gray-400 hover:text-white transition">Corporate Training</Link></li>
+                        </ul>
                     </div>
 
                     <div>
-                        <h4 style={colTitle}>Company</h4>
-                        <a href="#home" style={linkStyle}>About Us</a>
-                        <a href="#portfolio" style={linkStyle}>Portfolio</a>
-                        <a href="#contact" style={linkStyle}>Contact</a>
+                        <h4 className="text-lg font-bold mb-6 text-brand-accent">Company</h4>
+                        <ul className="space-y-3">
+                            <li><Link to="/about" className="text-gray-400 hover:text-white transition">About Us</Link></li>
+                            <li><Link to="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        </ul>
                     </div>
 
                     <div>
-                        <h4 style={colTitle}>Connect</h4>
-                        <a href="#" style={linkStyle}>WhatsApp</a>
-                        <a href="#" style={linkStyle}>LinkedIn</a>
-                        <a href="#" style={linkStyle}>Instagram</a>
+                        <h4 className="text-lg font-bold mb-6 text-brand-accent">Connect</h4>
+                        <ul className="space-y-3">
+                            <li><a href="#" className="text-gray-400 hover:text-white transition">LinkedIn</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition">Twitter (X)</a></li>
+                            <li><a href="#" className="text-gray-400 hover:text-white transition">Instagram</a></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', textAlign: 'center', color: '#6b7280', fontSize: '0.9rem' }}>
+                <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                     &copy; {new Date().getFullYear()} InfisGroup. All rights reserved. • Qatar • UAE • India
                 </div>
             </div>
