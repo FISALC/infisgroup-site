@@ -1,148 +1,112 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from './Logo';
 
 const Header = () => {
-    const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
-    const isHome = location.pathname === '/';
 
+    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const headerStyle = {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        zIndex: 1000,
-        transition: 'var(--transition-medium)',
-        backgroundColor: scrolled || isMenuOpen ? 'rgba(255, 255, 255, 0.95)' : 'transparent',
-        backdropFilter: scrolled || isMenuOpen ? 'blur(10px)' : 'none',
-        boxShadow: scrolled || isMenuOpen ? 'var(--shadow-sm)' : 'none',
-        padding: scrolled ? '1rem 0' : '1.5rem 0',
-    };
-
-    const getLinkFn = (item) => {
-        const lowerItem = item.toLowerCase();
-        if (item === 'Home') return '/';
-        if (item === 'About') return '/about';
-        if (item === 'Web Development') return '/web-development';
-        if (item === 'Recruitment') return '/recruitment';
-        if (item === 'Training') return '/training';
-        return `/${lowerItem.replace(' ', '-')}`;
-    };
-
-    const NavLink = ({ item, isMobile = false }) => {
-        const path = getLinkFn(item);
-        const isHash = path.startsWith('#');
-        const commonStyle = isMobile ? {
-            fontSize: '1.2rem',
-            fontWeight: 600,
-            color: item === 'Contact' ? 'var(--brand-primary)' : 'var(--text-primary)'
-        } : {
-            fontWeight: 500,
-            color: 'var(--text-primary)'
-        };
-
-        if (isHash) {
-            return (
-                <a
-                    href={path}
-                    onClick={() => isMobile && setIsMenuOpen(false)}
-                    style={commonStyle}
-                >
-                    {item}
-                </a>
-            );
+    // Scroll to section handling (for Home)
+    useEffect(() => {
+        if (location.hash) {
+            const elem = document.getElementById(location.hash.substring(1));
+            if (elem) {
+                setTimeout(() => {
+                    elem.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
         }
+    }, [location]);
 
-        return (
-            <Link
-                to={path}
-                onClick={() => isMobile && setIsMenuOpen(false)}
-                style={commonStyle}
-            >
-                {item}
-            </Link>
-        );
-    };
+    // Close menu when route changes
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location.pathname]);
 
     return (
-        <header style={headerStyle}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/" style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    fontSize: '1.5rem',
-                    fontWeight: 700,
-                    fontFamily: 'var(--font-display)',
-                    color: scrolled || isMenuOpen ? 'var(--brand-primary)' : 'var(--text-primary)',
-                    cursor: 'pointer',
-                    textDecoration: 'none'
-                }}>
-                    <Logo size={40} />
-                    <span>Infis<span style={{ color: 'var(--brand-secondary)' }}>Group</span></span>
+        <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-950/90 backdrop-blur-md border-b border-white/10 py-3 shadow-lg' : 'bg-transparent py-5'}`}>
+            <div className="container mx-auto flex items-center justify-between px-6">
+                {/* Logo */}
+                <Link to="/" className="flex items-center gap-2 group">
+                    <div className="w-10 h-10 bg-gradient-to-tr from-indigo-600 to-teal-400 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                    <span className="text-2xl font-bold text-white tracking-tight">Infis<span className="text-indigo-400">Group</span></span>
                 </Link>
 
-                {/* Mobile Hamburger */}
-                <div className="mobile-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)} style={{
-                    display: 'none',
-                    cursor: 'pointer',
-                    flexDirection: 'column',
-                    gap: '6px',
-                }}>
-                    <span style={{ display: 'block', width: '25px', height: '3px', background: 'var(--text-primary)' }}></span>
-                    <span style={{ display: 'block', width: '25px', height: '3px', background: 'var(--text-primary)' }}></span>
-                    <span style={{ display: 'block', width: '25px', height: '3px', background: 'var(--text-primary)' }}></span>
-                </div>
-
-                {/* Desktop Nav */}
-                <nav className="desktop-nav">
-                    <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', alignItems: 'center' }}>
-                        {['Home', 'Web Development', 'Recruitment', 'Training', 'About'].map((item) => (
-                            <li key={item}>
-                                <NavLink item={item} />
-                            </li>
-                        ))}
-                        <li><Link to="/contact" className="btn-primary" style={{ padding: '0.5rem 1.2rem', color: '#fff', textDecoration: 'none' }}>Contact</Link></li>
-                    </ul>
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex items-center gap-8">
+                    {[
+                        { name: 'Home', path: '/' },
+                        { name: 'Web Development', path: '/web-development' },
+                        { name: 'Recruitment', path: '/recruitment' },
+                        { name: 'Training', path: '/training' },
+                        { name: 'About', path: '/about' }
+                    ].map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.path}
+                            style={{ color: '#ffffff' }}
+                            className="!text-white hover:!text-indigo-400 font-bold transition-colors text-sm uppercase tracking-wider hover:underline underline-offset-4"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
                 </nav>
 
-                {/* Mobile Nav Overlay */}
-                {isMenuOpen && (
-                    <nav style={{
-                        position: 'absolute',
-                        top: '100%',
-                        left: 0,
-                        width: '100%',
-                        backgroundColor: '#fff',
-                        padding: '2rem',
-                        boxShadow: 'var(--shadow-lg)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1.5rem',
-                        textAlign: 'center'
-                    }}>
-                        {['Home', 'Web Development', 'Recruitment', 'Training', 'About', 'Contact'].map((item) => (
-                            <NavLink key={item} item={item} isMobile={true} />
-                        ))}
-                    </nav>
-                )}
+                {/* CTA Button */}
+                <div className="hidden md:block">
+                    <Link to="/contact" className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-all shadow-lg shadow-indigo-600/25 flex items-center gap-2">
+                        Contact Us <ArrowRight size={16} />
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    className="md:hidden text-white hover:text-indigo-400 transition-colors"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                </button>
             </div>
-            <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .mobile-toggle { display: flex !important; }
-        }
-      `}</style>
+
+            {/* Mobile Navigation */}
+            {isMenuOpen && (
+                <div className="md:hidden absolute top-full left-0 w-full bg-slate-950 border-b border-gray-800 shadow-2xl py-6 px-6 flex flex-col gap-4 max-h-[80vh] overflow-y-auto">
+                    {[
+                        { name: 'Home', path: '/' },
+                        { name: 'Web Development', path: '/web-development' },
+                        { name: 'Recruitment', path: '/recruitment' },
+                        { name: 'Training', path: '/training' },
+                        { name: 'About', path: '/about' },
+                        { name: 'Contact', path: '/contact' }
+                    ].map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.path}
+                            style={{ color: '#ffffff' }}
+                            className="text-lg font-bold !text-white hover:!text-indigo-400 border-b border-gray-800 pb-3 last:border-0"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
+            )}
         </header>
     );
 };

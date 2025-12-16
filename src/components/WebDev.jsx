@@ -1,52 +1,61 @@
 import React from 'react';
-import { ArrowRight, Code, Cpu, Server, CheckCircle } from 'lucide-react';
+import { Code, Cloud, Server, Database, ArrowRight, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import ScrollReveal from './ScrollReveal';
 
 const WebDev = () => {
     return (
-        <div className="pt-24 min-h-screen">
+        <div className="min-h-screen bg-slate-50">
             {/* Hero */}
-            <section className="container section-padding text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-                    Future-Proof Web Solutions <br /> Built with AI
-                </h1>
-                <p className="text-xl md:text-2xl text-secondary mb-8 max-w-3xl mx-auto">
-                    Ultra-fast performance, AI-driven personalization, and scalable cloud architecture.
-                    We build the next generation of web applications.
-                </p>
-                <div className="flex justify-center gap-4">
-                    <button className="btn-primary flex items-center gap-2">
-                        Start Your Project <ArrowRight size={20} />
-                    </button>
+            <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-20">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 blur-[120px]"></div>
+                <div className="container mx-auto relative z-10 px-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="max-w-4xl"
+                    >
+                        <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                            Intelligent <span className="text-indigo-400">Web Solutions</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-slate-300 mb-10 leading-relaxed max-w-2xl">
+                            We build high-performance, scalable web applications powered by modern AI frameworks.
+                            From rapid MVPs to enterprise-grade cloud systems, we deliver code that scales.
+                        </p>
+                        <Link to="/contact" className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-xl inline-flex items-center transition-all shadow-lg shadow-indigo-600/20">
+                            Start Your Project <ArrowRight className="ml-2" />
+                        </Link>
+                    </motion.div>
                 </div>
             </section>
 
-            {/* Services Grid */}
-            <section className="bg-white py-20">
-                <div className="container">
-                    <h2 className="text-3xl font-bold mb-12 text-center text-primary">Our Expertise</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
+            {/* Capabilities */}
+            <section className="py-24">
+                <div className="container mx-auto px-6">
+                    <ScrollReveal>
+                        <h2 className="text-4xl font-bold mb-16 text-center text-slate-900">Our Technical Expertise</h2>
+                    </ScrollReveal>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { title: 'Custom Web Apps', icon: <Code size={32} />, desc: 'Tailor-made solutions using React, Next.js, and modern frameworks.' },
-                            { title: 'AI Integrations', icon: <Cpu size={32} />, desc: 'Smart chatbots, recommendation engines, and automated workflows.' },
-                            { title: 'Scalable Cloud', icon: <Server size={32} />, desc: 'Robust architecture on AWS/Azure for reliable performance.' }
-                        ].map((service, index) => (
-                            <div key={index} className="p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border border-gray-100">
-                                <div className="text-brand-secondary mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                                <p className="text-gray-600">{service.desc}</p>
-                            </div>
+                            { title: "Custom AI Web Apps", icon: <Code />, desc: "React/Next.js applications with integrated AI features like chatbots, recommendation engines, and predictive analytics." },
+                            { title: "Cloud Architecture", icon: <Cloud />, desc: "Scalable AWS/Azure infrastructure designed for high availability, security, and cost-optimization." },
+                            { title: "Backend Systems", icon: <Server />, desc: "Robust Node.js and Python backends capable of handling massive data loads with low latency." },
+                            { title: "Database Design", icon: <Database />, desc: "Optimized SQL & NoSQL schemas for speed, reliability, and complex data relationships." }
+                        ].map((item, i) => (
+                            <ScrollReveal key={i} delay={i * 0.1}>
+                                <div className="p-8 border border-slate-200 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                                    <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                        {React.cloneElement(item.icon, { size: 28 })}
+                                    </div>
+                                    <h3 className="text-2xl font-bold mb-3 text-slate-900">{item.title}</h3>
+                                    <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                                </div>
+                            </ScrollReveal>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* Tech Stack */}
-            <section className="container py-20">
-                <h2 className="text-3xl font-bold mb-12 text-center">Powered By Modern Tech</h2>
-                <div className="flex flex-wrap justify-center gap-8 opacity-70">
-                    {['React', 'Vite', 'Node.js', 'Python', 'OpenAI', 'AWS', 'Tailwind', 'PostgreSQL'].map(tech => (
-                        <span key={tech} className="text-xl font-semibold text-gray-400">{tech}</span>
-                    ))}
                 </div>
             </section>
         </div>
